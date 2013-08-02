@@ -38,7 +38,7 @@ public class Main extends BasicGame {
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
 
-        graphics.setColor(new Color(0.0f,0.8f,0.0f));
+        graphics.setColor(new Color(0.0f,0.0f,0.8f));
         graphics.fillRect(0,0,500,400);
         graphics.setColor(new Color(1.f,1.f,1.f));
         graphics.fillRect(x,100,20,20);
