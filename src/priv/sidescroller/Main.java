@@ -8,6 +8,7 @@ public class Main extends BasicGame {
     MainChar mainChar;
     Map map;
     Background background;
+    static int h = 400, w = 500;
 
     public Main()
     {
@@ -18,7 +19,7 @@ public class Main extends BasicGame {
         try
         {
             AppGameContainer app = new AppGameContainer(new Main());
-            app.setDisplayMode(500, 400, false);
+            app.setDisplayMode(w, h, false);
             app.start();
         }
         catch (SlickException e)
