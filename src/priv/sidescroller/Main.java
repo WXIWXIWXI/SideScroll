@@ -5,7 +5,7 @@ import org.newdawn.slick.*;
 import static java.lang.Math.random;
 
 public class Main extends BasicGame {
-    private int x=0;
+    MainChar mainChar;
 
     public Main()
     {
@@ -27,21 +27,22 @@ public class Main extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        //To change body of implemented methods use File | Settings | File Templates.
+        Image mov1 = new Image("data/Main/Moving/Main Moving 1.png");
+        Image [] moving = {mov1, new Image("data/Main/Moving/Main Moving 2.png"), mov1, new Image("data/Main/Moving/Main Moving 3.png")};
+        Image [] idle = {new Image("data/Main/Idle/Main Idle 1.png"), new Image("data/Main/Idle/Main Idle 2.png"), new Image("data/Main/Idle/Main Idle 3.png")};
+
+        int [] duration = {100, 100, 100, 100};
+        int [] durationIdle = {300, 300, 300};
+        mainChar = new MainChar(100,100,10,new Animation(moving,duration,true),new Animation(idle,durationIdle,true));
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        x+=delta*1;
+        mainChar.update(gameContainer, delta);
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-
-        graphics.setColor(new Color(0.0f,0.0f,0.8f));
-        graphics.fillRect(0,0,500,400);
-        graphics.setColor(new Color(1.f,1.f,1.f));
-        graphics.fillRect(x,100,20,20);
-
+        mainChar.draw(gameContainer, graphics);
     }
 }
