@@ -12,7 +12,7 @@ import org.newdawn.slick.Graphics;
  * To change this template use File | Settings | File Templates.
  */
 public class Map {
-    private float yOffset,xOffset,scrollspeed;
+    protected float yOffset,xOffset,scrollspeed;
 
     public Map(float yOffset, float scrollspeed)
     {

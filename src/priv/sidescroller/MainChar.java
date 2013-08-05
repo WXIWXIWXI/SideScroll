@@ -26,7 +26,7 @@ public class MainChar {
     }
 
     public void draw(GameContainer gameContainer, Graphics graphics)
-    {
+        {
         walking.draw(xPos,yPos);
         graphics.drawRect(xPos,yPos,10,10);
     }

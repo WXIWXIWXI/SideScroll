@@ -7,6 +7,7 @@ import static java.lang.Math.random;
 public class Main extends BasicGame {
     MainChar mainChar;
     Map map;
+    Background background;
 
     public Main()
     {
@@ -36,6 +37,7 @@ public class Main extends BasicGame {
         int [] durationIdle = {300, 300, 300};
         mainChar = new MainChar(100,100,3,new Animation(moving,duration,true),new Animation(idle,durationIdle,true));
         map = new Map(150,2);
+        background = new Background(150,1);
     }
 
     @Override
@@ -59,11 +61,13 @@ public class Main extends BasicGame {
         }
         mainChar.update(gameContainer, delta);
         map.update(gameContainer,delta);
+        background.update(gameContainer,delta);
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
         map.draw(gameContainer,graphics);
+        background.draw(gameContainer,graphics);
         mainChar.draw(gameContainer, graphics);
     }
 }
