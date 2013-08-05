@@ -33,11 +33,28 @@ public class Main extends BasicGame {
 
         int [] duration = {100, 100, 100, 100};
         int [] durationIdle = {300, 300, 300};
-        mainChar = new MainChar(100,100,10,new Animation(moving,duration,true),new Animation(idle,durationIdle,true));
+        mainChar = new MainChar(100,100,3,new Animation(moving,duration,true),new Animation(idle,durationIdle,true));
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
+        Input input = gameContainer.getInput();
+        if (input.isKeyDown(Input.KEY_UP))
+        {
+             mainChar.setWalksup(true);
+        }
+        else
+        {
+             mainChar.setWalksup(false);
+        }
+        if (input.isKeyDown(Input.KEY_DOWN))
+        {
+            mainChar.setWalksdown(true);
+        }
+        else
+        {
+            mainChar.setWalksdown(false);
+        }
         mainChar.update(gameContainer, delta);
     }
 

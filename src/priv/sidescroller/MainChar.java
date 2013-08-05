@@ -34,5 +34,21 @@ public class MainChar {
     public void update(GameContainer gameContainer, int delta)
     {
         this.xPos += delta* 0.1f;
+        if (walksup)
+        {
+            this.yPos-=delta*0.1f*speed;
+        }
+        if (walksdown)
+        {
+            this.yPos+=delta*0.1f*speed;
+        }
+    }
+
+    public void setWalksdown(boolean walksdown) {
+        this.walksdown = walksdown;
+    }
+
+    public void setWalksup(boolean walksup) {
+        this.walksup = walksup;
     }
 }
