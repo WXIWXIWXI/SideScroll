@@ -36,11 +36,15 @@ public class MainChar {
         this.xPos += delta* 0.1f;
         if (walksup)
         {
-            this.yPos-=delta*0.1f*speed;
+            if(this.yPos-delta*0.1f*speed > 80) {
+                this.yPos-=delta*0.1f*speed;
+            }
         }
         if (walksdown)
         {
-            this.yPos+=delta*0.1f*speed;
+            if(this.yPos+delta*0.1f*speed < 320) {
+                this.yPos+=delta*0.1f*speed;
+            }
         }
     }
 
